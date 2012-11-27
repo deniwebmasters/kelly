@@ -1,24 +1,27 @@
 <?php
 class task2{
-	var $result=array();
+	private $_x=0;
+	private $_y=0;
+	private $_result=array();
 	
-	function __construct($x, $y){
-		$x=(int)$x;
-		$y=(int)$y;
-		
-		for($i=$x;$i<=$y;$i++){
+	function setXY($x, $y){
+		$this->_x=(int)$x;
+		$this->_y=(int)$y;
+	}
+	
+	function execute(){
+		for($i=$this->_x;$i<=$this->_y;$i++){
 			if($this->FizzBuzz($i))
-				array_push($this->result, "FizzBuzzBazz");
+				array_push($this->_result, "FizzBuzzBazz");
 			elseif($this->Fizz($i))
-				array_push($this->result, "Fizz");
+				array_push($this->_result, "Fizz");
 			elseif($this->Buzz($i))
-				array_push($this->result, "Buzz");
+				array_push($this->_result, "Buzz");
 			elseif($this->Bazz($i))
-				array_push($this->result, "Bazz");
+				array_push($this->_result, "Bazz");
 			else
-				array_push($this->result, $i);
+				array_push($this->_result, $i);
 		}
-		
 	}
 	
 	function Fizz($n){
@@ -30,7 +33,7 @@ class task2{
 	}
 	
 	function Bazz($n){
-		if(end($this->result)=='Fizz' && prev($this->result)=='Buzz' || end($this->result)=='Buzz' && prev($this->result)=='Fizz')
+		if($this->Fizz($n-1) && $this->Buzz($n-2) || $this->Fizz($n-2) && $this->Buzz($n-1))
 			return true;
 		else
 			return false;
@@ -41,10 +44,12 @@ class task2{
 	}
 	
 	function getResult(){
-		return implode(" ", $this->result);
+		return implode(" ", $this->_result);
 	}
 }
 
-$fb=new task2(5, 100);
-echo $fb->getResult();
+$task2=new task2();
+$task2->setXY(5, 100);
+$task2->execute();
+echo $task2->getResult();
 ?>
