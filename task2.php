@@ -5,7 +5,8 @@ class task2{
 	private $_result=array();
 	
 	public function clear(){
-		unset($this->_result, $this->_x, $this->_y);
+		$this->_result=array();
+		unset($this->_x, $this->_y);
 	}
 	
 	public function setXY($x, $y){
