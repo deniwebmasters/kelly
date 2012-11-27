@@ -5,7 +5,8 @@ class task1{
 	private $_result=array();
 	
 	public function clear(){
-		unset($this->_result, $this->_x, $this->_y);
+		$this->_result=array();
+		unset($this->_x, $this->_y);
 	}
 	
 	public function setXY($x, $y){
@@ -45,8 +46,10 @@ class task1{
 	}
 }
 
-//$task1=new task1();
-//$task1->setXY(1, 10);
-//$task1->execute();
-//echo $task1->getResult();
+/*
+$task1=new task1();
+$task1->setXY(1, 100);
+$task1->execute();
+echo $task1->getResult();
+*/
 ?>
