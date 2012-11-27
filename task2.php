@@ -16,7 +16,7 @@ class task2{
 		$this->_y=(int)$y;
 	}
 	
-	function execute(){
+	public function execute(){
 		for($i=$this->_x;$i<=$this->_y;$i++){
 			if($this->FizzBuzz($i))
 				array_push($this->_result, "FizzBuzzBazz");
@@ -31,32 +31,33 @@ class task2{
 		}
 	}
 	
-	function Fizz($n){
+	public function Fizz($n){
 		return $n%3==0?true:false;
 	}
 	
-	function Buzz($n){
+	public function Buzz($n){
 		return $n%5==0?true:false;
 	}
 	
-	function Bazz($n){
+	public function Bazz($n){
 		if($this->Fizz($n-1) && $this->Buzz($n-2) || $this->Fizz($n-2) && $this->Buzz($n-1))
 			return true;
 		else
 			return false;
 	}
 	
-	function FizzBuzz($n){
+	public function FizzBuzz($n){
 		return $n%3==0 && $n%5==0?true:false;
 	}
 	
-	function getResult(){
+	public function getResult(){
 		return implode(" ", $this->_result);
 	}
 }
-
+/*
 $task2=new task2();
 $task2->setXY(5, 100);
 $task2->execute();
 echo $task2->getResult();
+*/
 ?>
