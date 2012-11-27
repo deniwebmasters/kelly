@@ -45,6 +45,6 @@ class task2{
 	}
 }
 
-$fb=new FBB(5, 100);
+$fb=new task2(5, 100);
 echo $fb->getResult();
 ?>
