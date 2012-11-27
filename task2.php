@@ -4,7 +4,13 @@ class task2{
 	private $_y=0;
 	private $_result=array();
 	
-	function setXY($x, $y){
+	public function clear(){
+		unset($this->_result, $this->_x, $this->_y);
+	}
+	
+	public function setXY($x, $y){
+		$this->clear();
+		
 		$this->_x=(int)$x;
 		$this->_y=(int)$y;
 	}
