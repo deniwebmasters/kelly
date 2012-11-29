@@ -51,11 +51,11 @@ class task2Test extends PHPUnit_Framework_TestCase
 		$this->assertTrue($this->_task2->Bazz(11));
 	}
 	public function testBazz16(){
-		$this->assertFalse($this->_task2->Bazz(16));
+		$this->assertTrue($this->_task2->Bazz(16));
 	}
 	
 	public function testResult_1_to_5(){
-		$expected="1 2 Fizz 4 Buzz";
+		$expected="Bazz 2 Fizz 4 Buzz";
 		$this->_task2->setXY(1, 5);
 		$this->_task2->execute();
 		$this->assertEquals($expected, $this->_task2->getResult());
@@ -67,7 +67,7 @@ class task2Test extends PHPUnit_Framework_TestCase
 		$this->assertEquals($expected, $this->_task2->getResult());
 	}
 	public function testResult_11_to_16(){
-		$expected="Bazz Fizz 13 14 FizzBuzzBazz 16";
+		$expected="Bazz Fizz 13 14 FizzBuzz Bazz";
 		$this->_task2->setXY(11, 16);
 		$this->_task2->execute();
 		$this->assertEquals($expected, $this->_task2->getResult());
