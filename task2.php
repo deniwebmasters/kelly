@@ -19,7 +19,7 @@ class task2{
 	public function execute(){
 		for($i=$this->_x;$i<=$this->_y;$i++){
 			if($this->FizzBuzz($i))
-				array_push($this->_result, "FizzBuzzBazz");
+				array_push($this->_result, "FizzBuzz");
 			elseif($this->Fizz($i))
 				array_push($this->_result, "Fizz");
 			elseif($this->Buzz($i))
@@ -40,7 +40,7 @@ class task2{
 	}
 	
 	public function Bazz($n){
-		if($this->Fizz($n-1) && $this->Buzz($n-2) || $this->Fizz($n-2) && $this->Buzz($n-1))
+		if($this->Fizz($n-1) && $this->Buzz($n-2) || $this->Fizz($n-2) && $this->Buzz($n-1) || $this->FizzBuzz($n-1))
 			return true;
 		else
 			return false;
