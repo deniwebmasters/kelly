@@ -50,8 +50,8 @@ class task2Test extends PHPUnit_Framework_TestCase
 	public function testBazz11(){
 		$this->assertTrue($this->_task2->Bazz(11));
 	}
-	public function testBazz16(){
-		$this->assertTrue($this->_task2->Bazz(16));
+	public function testBazz17(){
+		$this->assertFalse($this->_task2->Bazz(17));
 	}
 	
 	public function testResult_1_to_5(){
